@@ -1,0 +1,9 @@
+{
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "num_epochs": 10,                             
+    "checkpoint_path_valid": "./checkpoints/valid/resnet18_cifar10_valid.pth",
+    "checkpoint_path_no_validation": "./checkpoints/no_validation/resnet18_cifar10_no_validation.pth",
+    "early_stop_patience": 5,
+    "loss_threshold": 0.5                          
+}
