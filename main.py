@@ -2,7 +2,7 @@ import torch
 import json
 from model import get_resnet_model
 from dataloader import get_dataloaders
-from utils import EarlyStopping  # Assicurati che questa classe sia corretta
+from utils import EarlyStopping 
 from train import train_and_evaluate  # Funzione principale per addestrare e valutare
 
 if __name__ == '__main__':
