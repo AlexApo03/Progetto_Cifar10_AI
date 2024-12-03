@@ -25,7 +25,7 @@ class EarlyStopping:
             self.early_stop = True
             return
         
-        # Logica di early stopping basata su pazienza
+        # Logica di early stopping 
         if self.best_loss is None:
             self.best_loss = loss
         elif loss > self.best_loss:
