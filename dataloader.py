@@ -17,7 +17,7 @@ class Cifar10Batch(torch.utils.data.Dataset):
                 self.data.append(batch['data'])
                 self.labels.append(batch['labels'])
 
-        # Concatenate all batches
+        # Concatena tutti i batches
         self.data = np.concatenate(self.data)
         self.labels = np.concatenate(self.labels)
 
@@ -36,7 +36,7 @@ class Cifar10Batch(torch.utils.data.Dataset):
         return img, label
 
 def get_dataloaders(batch_size, train_batch_files=None, test_batch_file=None):
-    # Define transformations
+    # Definisce le trasformazioni
     transform_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),
         transforms.RandomHorizontalFlip(),
@@ -49,11 +49,11 @@ def get_dataloaders(batch_size, train_batch_files=None, test_batch_file=None):
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
     ])
 
-    # Create datasets
+    # Crea i Dataset
     train_dataset = Cifar10Batch(batch_files=train_batch_files, transform=transform_train)
     test_dataset = Cifar10Batch(batch_files=[test_batch_file], transform=transform_test)
 
-    # Create DataLoader
+    # Crea i Dataloader
     trainloader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=2)
     testloader = torch.utils.data.DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=2)
 
