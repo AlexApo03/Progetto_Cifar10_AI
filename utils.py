@@ -13,7 +13,7 @@ def save_checkpoint(state, is_valid, valid_path, no_validation_path):
 class EarlyStopping:
     def __init__(self, patience=5, loss_threshold=None):
         self.patience = patience
-        self.loss_threshold = loss_threshold  # Aggiungi il parametro di soglia di perdita
+        self.loss_threshold = loss_threshold  # Aggiunge il parametro di soglia di perdita
         self.counter = 0
         self.best_loss = None
         self.early_stop = False
